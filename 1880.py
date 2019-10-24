@@ -1,0 +1,7 @@
+a = input()
+a = list(map(int, input().split()))
+b = input()
+b = list(map(int, input().split()))
+c = input()
+c = list(map(int, input().split()))
+print(len(list(set(a) & set(b) & set(c))))
