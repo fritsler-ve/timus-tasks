@@ -1,9 +1,7 @@
 # 1209
-from math import sqrt
-
 
 def value(number):
-    return int((1 + sqrt(1 + 8 * number)) / 2) - 1
+    return int((1 + (1 + 8 * number)**0.5) / 2) - 1
 
 
 def nvalue(number):
@@ -11,15 +9,16 @@ def nvalue(number):
 
 
 def solve(number):
-    n = value(number)
+    if number == 1:
+        return 1
     if (nvalue(value(number)) == number - 1):
-        return 1
-    if (nvalue(value(number) + 1) == number - 1):
-        return 1
-    if (nvalue(value(number) - 1) == number - 1):
         return 1
     return 0
 
+
+res = []
 N = int(input())
 for i in range(N):
-    print(solve(int(input())), end=' ')
+    a = int(input())
+    res.append(str(solve(a)))
+print(' '.join(res))
